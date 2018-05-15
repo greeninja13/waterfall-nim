@@ -27,7 +27,7 @@ namespace Waterfall_Nim
                 input = input.ToUpper();
                 if (input.Contains("1") || input.Contains("play"))
                 {
-                    // start game
+                    Choice();
                     valid = true;
                 }
                 else if (input.Contains("2") || input.Contains("read"))
@@ -72,7 +72,7 @@ namespace Waterfall_Nim
             } while (!valid);
         }
 
-        public void Choice()
+        public static void Choice()
         {
             bool valid = false;
             do
@@ -95,7 +95,7 @@ namespace Waterfall_Nim
             } while (!valid);
         }
 
-        public string Difficulty()
+        public static void Difficulty()
         {
             bool valid = false;
             string difficulty = "easy";
@@ -131,7 +131,8 @@ namespace Waterfall_Nim
                 }
             } while (!valid);
 
-            return difficulty;
+            Game game = new Game();
+            game.PvP(difficulty);
         }
     }
 }

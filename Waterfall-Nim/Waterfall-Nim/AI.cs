@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Waterfall_Nim
 {
-    class AI
+    public class AI
     {
     }
 }
