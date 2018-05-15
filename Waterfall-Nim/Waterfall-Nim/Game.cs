@@ -9,6 +9,14 @@ namespace Waterfall_Nim
 {
    public class Game
     {
+        public void PvP()
+        {
 
+        }
+
+        public void PvC()
+        {
+
+        }
     }
 }

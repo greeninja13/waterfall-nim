@@ -86,24 +86,52 @@ namespace Waterfall_Nim
                 Console.WriteLine();
                 if (input.Contains("1"))
                 {
-                    Difficulty("pvp")
+                    Difficulty();
+              
                 }else if (input.Contains("2"))
                 {
-                    Difficulty("AI");
+                 
                 }
             } while (!valid);
         }
 
-        public string Difficulty(string player)
+        public string Difficulty()
         {
-            if(player == "pvp")
+            bool valid = false;
+            string difficulty = "easy";
+
+            do
             {
-                //pvp
-            }else if(player == "ai")
-            {
-                //ai
-            }
-            return player;
+                Console.WriteLine("Choose a difficulty");
+                Console.WriteLine();
+                Console.WriteLine("1. Easy");
+                Console.WriteLine("2. Medium");
+                Console.WriteLine("3. Hard");
+                Console.WriteLine();
+                string input = Console.ReadLine().ToUpper();
+                if (input == "1" || input == "EASY")
+                {
+                    difficulty = "easy";
+                    valid = true;
+                }else if(input == "2" || input == "MEDIUM")
+                {
+                    difficulty = "medium";
+                    valid = true;
+                }else if(input == "3" || input == "HARD")
+                {
+                    difficulty = "hard";
+                    valid = true;
+                }else if(input == "" || input == null)
+                {
+                    Console.WriteLine("Invalid input");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input");
+                }
+            } while (!valid);
+
+            return difficulty;
         }
     }
 }
