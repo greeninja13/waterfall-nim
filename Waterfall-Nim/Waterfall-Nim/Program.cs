@@ -71,5 +71,39 @@ namespace Waterfall_Nim
                 }
             } while (!valid);
         }
+
+        public void Choice()
+        {
+            bool valid = false;
+            do
+            {
+                Console.WriteLine("Choose one...");
+                Console.WriteLine();
+                Console.WriteLine("1. Player vs Player");
+                Console.WriteLine("2. Player vs AI");
+                Console.WriteLine();
+                string input = Console.ReadLine();
+                Console.WriteLine();
+                if (input.Contains("1"))
+                {
+                    Difficulty("pvp")
+                }else if (input.Contains("2"))
+                {
+                    Difficulty("AI");
+                }
+            } while (!valid);
+        }
+
+        public string Difficulty(string player)
+        {
+            if(player == "pvp")
+            {
+                //pvp
+            }else if(player == "ai")
+            {
+                //ai
+            }
+            return player;
+        }
     }
 }
