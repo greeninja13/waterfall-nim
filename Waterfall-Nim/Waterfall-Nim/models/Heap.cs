@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Waterfall_Nim.models
 {
-    class Heap
+    public class Heap
     {
         public int Sticks { get; set; }
 

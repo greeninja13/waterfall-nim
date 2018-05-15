@@ -8,10 +8,10 @@ namespace Waterfall_Nim.models
 {
     public class Board
     {
-        private Heap[] heaps;
+        public Heap[] heaps;
         public Board(string difficulty)
         {
-            switch (difficulty)
+            switch (difficulty.ToLower())
             {
                 case "easy": //Easy
                     heaps = new Heap[] { new Heap() { Sticks = 3 }, new Heap() { Sticks = 3 } };
