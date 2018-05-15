@@ -126,7 +126,7 @@ namespace Waterfall_Nim
                             else
                             {
                                 board.heaps[num].Sticks -= num2;
-                                //check
+                                Check(turn, board);
                                 if (playerTurn == "p1")
                                 {
                                     playerTurn = "p2";
@@ -142,5 +142,18 @@ namespace Waterfall_Nim
                     }
                 } while (!valid) ;
             }
+
+        private void Check(string player, models.Board board)
+        {
+            if(player == "p1" && board.heaps.Length == 0)
+            {
+                Console.WriteLine("Player 2 wins");
+                done = true;
+            }else if(player == "p2" && board.heaps.Length == 0)
+            {
+                Console.WriteLine("Player 1 wins");
+                done = true;
+            }
+        }
     }
 }
