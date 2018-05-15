@@ -41,6 +41,14 @@ namespace Waterfall_Nim
 
         public void PvC()
         {
+            models.Board board = new models.Board("easy");
+            Player p1 = new Player();
+            Console.WriteLine("Player 1, please enter your name");
+            Console.WriteLine();
+            p1.PName = Console.ReadLine();
+            Console.WriteLine();
+
+            aiMove(board);
 
         }
 
@@ -57,8 +65,98 @@ namespace Waterfall_Nim
             return turn;
         }
 
+        public void aiMove(models.Board board)
+        {
 
-        public void playerMove(string turn, models.Board board)
+            Random rand = new Random();
+            int num = rand.Next(board.heaps.Length - 1);
+            int stick = rand.Next(1, board.heaps[num].Sticks);
+            board.heaps[num].Sticks -= stick;
+            aiCheck("ai", board);
+        }
+
+
+        public void p1Move(models.Board board)
+        {
+            bool valid = false;
+            int count = 0;
+            Console.WriteLine("It is player 1's turn.");
+            Console.WriteLine();
+            Console.WriteLine("There are " + board.heaps.Length + "heaps");
+            Console.WriteLine();
+
+            for (int i = 0; i < board.heaps.Length; i++)
+            {
+                count++;
+                Console.WriteLine("Heap number" + count + ": " + board.heaps[i].Sticks + " sticks");
+                Console.WriteLine();
+            }
+
+            do
+            {
+                Console.WriteLine("Enter the heap you wish to access");
+                string input = Console.ReadLine();
+                int num;
+                bool bParse = int.TryParse(input, out num);
+                Console.WriteLine();
+
+                if (bParse == false)
+                {
+                    Console.WriteLine("Invalid Input");
+                    Console.WriteLine();
+                }
+                else if (bParse == true)
+                {
+                    if (num < 1)
+                    {
+                        Console.WriteLine("Invalid Input");
+                        Console.WriteLine();
+                    }
+                    else if (num > board.heaps.Length)
+                    {
+                        Console.WriteLine("Invalid Input");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        int num2;
+                        Console.WriteLine("How many sticks would you like to draw?");
+                        string input2 = Console.ReadLine();
+                        Console.WriteLine();
+                        bool sParse = int.TryParse(input2, out num2);
+
+                        if (sParse == false)
+                        {
+                            Console.WriteLine("Invalid input");
+                            Console.WriteLine();
+                        }
+                        else if (sParse == true)
+                        {
+                            if (num2 < 1)
+                            {
+                                Console.WriteLine("You must draw a stick");
+                                Console.WriteLine();
+                            }
+                            else if (num2 > board.heaps[num].Sticks)
+                            {
+                                Console.WriteLine("This move is invalid");
+                                Console.WriteLine();
+                            }
+                            else
+                            {
+                                board.heaps[num].Sticks -= num2;
+                                aiCheck("p1", board);
+                                valid = true;
+                            }
+                        }
+                    }
+                }
+            } while (!valid);
+        }
+
+    
+
+    public void playerMove(string turn, models.Board board)
         {
             bool valid = false;
             int count = 0;
@@ -153,6 +251,25 @@ namespace Waterfall_Nim
             {
                 Console.WriteLine("Player 1 wins");
                 done = true;
+            }
+        }
+
+        private void aiCheck(string turn, models.Board board)
+        {
+            if (turn == "p1" && board.heaps.Length == 0)
+            {
+                Console.WriteLine("AI wins");
+                Console.WriteLine();
+                done = true;
+            } else if (turn == "ai" && board.heaps.Length == 0)
+            {
+                Console.WriteLine("Player 1 wins");
+                done = true;
+            } else if (turn == "ai" && board.heaps.Length != 0)
+            {
+                p1Move(board);
+            } else if (turn == "p1" && board.heaps.Length != 0{
+                aiMove(board);
             }
         }
     }
