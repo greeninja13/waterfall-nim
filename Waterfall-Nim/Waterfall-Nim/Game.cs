@@ -9,8 +9,10 @@ namespace Waterfall_Nim
 {
    public class Game
     {
+        
         public void PvP(string difficulty)
         {
+           
             Player p1 = new Player();
             Player p2 = new Player();
             Console.WriteLine("Player 1, please enter your name.");
@@ -21,6 +23,7 @@ namespace Waterfall_Nim
             p2.PName = Console.ReadLine();
             Console.WriteLine();
             string turn = Turn();
+            models.Board board = new models.Board(difficulty);
         }
 
         public void PvC()

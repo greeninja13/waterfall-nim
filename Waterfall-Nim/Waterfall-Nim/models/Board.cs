@@ -9,17 +9,17 @@ namespace Waterfall_Nim.models
     public class Board
     {
         private Heap[] heaps;
-        public Board(int difficulty)
+        public Board(string difficulty)
         {
             switch (difficulty)
             {
-                case 1: //Easy
+                case "easy": //Easy
                     heaps = new Heap[] { new Heap() { Sticks = 3 }, new Heap() { Sticks = 3 } };
                     break;
-                case 2: //Medium
+                case "medium": //Medium
                     heaps = new Heap[] { new Heap() { Sticks = 2 }, new Heap() { Sticks = 5 }, new Heap() { Sticks = 7 } };
                     break;
-                case 3: //Hard
+                case "hard": //Hard
                     heaps = new Heap[] { new Heap() { Sticks = 2 }, new Heap() { Sticks = 3 }, new Heap() { Sticks = 8 }, new Heap() { Sticks = 9 } };
                     break;
             }

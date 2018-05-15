@@ -15,6 +15,5 @@ namespace Waterfall_Nim
             get { return pName; }
             set { pName = value; }
         }
-
     }
 }
