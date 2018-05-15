@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace Waterfall_Nim
 {
+    /// <summary>
+    /// Player Class
+    /// creates a new player
+    /// </summary>
     public class Player
     {
+        //string
+        //Player's Name
         private string pName;
 
+        //string
+        //gets and sets Player's Name
         public string PName
         {
             get { return pName; }
