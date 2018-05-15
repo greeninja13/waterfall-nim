@@ -1,0 +1,7 @@
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\bin\Debug\Waterfall-Nim.exe.config
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\bin\Debug\Waterfall-Nim.exe
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\bin\Debug\Waterfall-Nim.pdb
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\obj\Debug\Waterfall-Nim.csprojAssemblyReference.cache
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\obj\Debug\Waterfall-Nim.csproj.CoreCompileInputs.cache
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\obj\Debug\Waterfall-Nim.exe
+C:\Users\Shallowfate\Documents\misc\Neumont\Neumont Work\Software Principles\waterfall-nim\Waterfall-Nim\Waterfall-Nim\obj\Debug\Waterfall-Nim.pdb
